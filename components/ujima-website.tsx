@@ -224,7 +224,7 @@ const UjimaWebsite = () => {
                 title: "Age-Friendly Village",
                 type: "Accessible Housing • Philadelphia, PA",
                 desc: "Three-story accessible housing development on Leidy Ave designed with WRT for aging-in-place. Features picnic groves, accessible ramps, community gardens, and porch-front living.",
-                imgUrl: "/projects/age-friendly-page-3.png",
+                imgUrl: "/projects/age-friendly-3-0.png",
                 stats: "Accessible • Aging-in-Place • Community Landscape",
               },
             ].map((project, i) => (
