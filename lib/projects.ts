@@ -92,11 +92,8 @@ export const projects: Project[] = [
     ],
     gallery: [
       { src: "/projects/thrive-fam-2-0.png", alt: "Thrive Village street view render", category: "render" },
-      { src: "/projects/thrive-fam-page-1.png", alt: "Food as Medicine Park aerial render", category: "render" },
-      { src: "/projects/thrive-fam-page-2.png", alt: "Food as Medicine Park landscape plan", category: "siteplan" },
-      { src: "/projects/thrive-village-4-0.png", alt: "Thrive Village floor plan — ground level", category: "floorplan" },
-      { src: "/projects/thrive-village-4-1.png", alt: "Thrive Village floor plan — upper levels", category: "floorplan" },
-      { src: "/projects/thrive-village-4-2.png", alt: "Thrive Village section and elevation", category: "floorplan" },
+      { src: "/projects/thrive-fam-page-2.png", alt: "FAM Park exterior at dusk and covered gathering space", category: "render" },
+      { src: "/projects/thrive-fam-page-1.png", alt: "Food as Medicine Park site plan", category: "siteplan" },
     ],
   },
   {
