@@ -166,7 +166,7 @@ export const projects: Project[] = [
       { src: "/projects/age-friendly-3-0.png", alt: "Age-Friendly Village street view", category: "render" },
       { src: "/projects/age-friendly-4-0.png", alt: "Age-Friendly Village courtyard view", category: "render" },
       { src: "/projects/age-friendly-page-1.png", alt: "Age-Friendly Village site plan", category: "siteplan" },
-      { src: "/projects/age-friendly-page-2.png", alt: "Age-Friendly Village landscape plan", category: "siteplan" },
+      { src: "/projects/age-friendly-page-2.png", alt: "Age-Friendly Village stormwater and grading plan", category: "siteplan" },
       { src: "/projects/age-friendly-page-5.png", alt: "Building 1 south street facade elevation", category: "floorplan" },
       { src: "/projects/age-friendly-page-6.png", alt: "Building 1 north backyard facade elevation", category: "floorplan" },
       { src: "/projects/age-friendly-page-7.png", alt: "Building 2 north street facade elevation", category: "floorplan" },
