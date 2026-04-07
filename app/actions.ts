@@ -34,7 +34,18 @@ export async function generateProjectConcept(idea: string) {
             {
               parts: [
                 {
-                  text: `As a senior architectural strategist for Ujima STX, generate a conceptual project brief based on this user input: "${idea}". Format JSON: {"title": "string", "values": "string", "strategy": "string"}.`,
+                  text: `You are a senior architectural strategist for Ujima STX, a regenerative community development firm based in St. Croix, USVI. Ujima STX specializes in equity-centered, climate-resilient housing that integrates healthcare, cultural programming, and community infrastructure. Their portfolio includes senior living campuses, workforce housing with solar micro-grids, mixed-use cultural hubs with Food as Medicine parks, and accessible aging-in-place communities.
+
+Based on this community need: "${idea}"
+
+Generate a conceptual project brief as JSON with these fields:
+- "title": A compelling 3-5 word project name
+- "values": One sentence on how this aligns with Ujima STX's core values of equity, resilience, innovation, and integrity
+- "strategy": 2-3 sentences describing the regenerative development approach, including specific design strategies, community infrastructure, and climate considerations
+
+Be specific and grounded — reference real design strategies like solar micro-grids, stormwater infrastructure, universal design, mixed-use programming, healthcare integration, or cultural anchoring where relevant.
+
+Format: {"title": "string", "values": "string", "strategy": "string"}`,
                 },
               ],
             },

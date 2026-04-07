@@ -1,6 +1,7 @@
 "use client"
 
 import { useState, useEffect } from "react"
+import Image from "next/image"
 import { Menu, X, ArrowRight, ChevronDown, ArrowUpRight, Mail, MapPin, Linkedin } from "lucide-react"
 import { CustomCursor } from "@/components/ui/custom-cursor"
 import { FadeIn } from "@/components/ui/fade-in"
@@ -41,6 +42,8 @@ const UjimaWebsite = () => {
 
       {/* Navigation */}
       <nav
+        role="navigation"
+        aria-label="Main navigation"
         className={`fixed w-full z-50 transition-all duration-700 ease-in-out ${scrolled ? "bg-white/90 backdrop-blur-md py-4 border-b border-black/5" : "bg-transparent py-8"}`}
       >
         <div className="max-w-[1400px] mx-auto px-6 md:px-12 flex justify-between items-center">
@@ -62,7 +65,7 @@ const UjimaWebsite = () => {
               </button>
             ))}
           </div>
-          <button className="md:hidden z-50 text-black cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)}>
+          <button className="md:hidden z-50 text-black cursor-pointer" onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label={isMenuOpen ? "Close menu" : "Open menu"} aria-expanded={isMenuOpen}>
             {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
           </button>
         </div>
@@ -127,10 +130,13 @@ const UjimaWebsite = () => {
           {/* Image Side with Parallax feel */}
           <div className="relative min-h-[60vh] lg:min-h-screen overflow-hidden group">
             <div className="absolute inset-0 bg-gray-100 transition-transform duration-[2s] ease-out scale-110 group-hover:scale-100">
-              <img
+              <Image
                 src="/projects/vitality-11-0.png"
-                alt="Vitality Senior Living Campus Render"
-                className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-1000"
+                alt="Architectural render of Vitality Senior Living campus in St. Croix, featuring modern buildings with solar panels surrounded by tropical landscape"
+                fill
+                sizes="(max-width: 1024px) 100vw, 50vw"
+                className="object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-1000"
+                priority
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
             </div>
@@ -231,10 +237,12 @@ const UjimaWebsite = () => {
               <FadeIn key={i} delay={i % 2 === 0 ? 0 : 200}>
                 <div className="group cursor-pointer">
                   <div className="relative aspect-[4/3] overflow-hidden mb-8 bg-gray-100">
-                    <img
+                    <Image
                       src={project.imgUrl}
-                      alt={project.title}
-                      className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-80 group-hover:opacity-100"
+                      alt={`Architectural render of ${project.title} — ${project.type}`}
+                      fill
+                      sizes="(max-width: 768px) 100vw, 50vw"
+                      className="object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-80 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-50"></div>
                     <div className="absolute bottom-6 left-6 right-6">
@@ -313,7 +321,7 @@ const UjimaWebsite = () => {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-16 md:gap-24">
             <FadeIn className="flex flex-col md:flex-row gap-8 md:gap-12 items-start group">
               <div className="w-full md:w-1/3 aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-700 overflow-hidden">
-                <img src="/images/leon-caldwell.webp" alt="Leon Caldwell" className="w-full h-full object-cover" />
+                <Image src="/images/leon-caldwell.webp" alt="Leon Caldwell, Ph.D. — Founder of Ujima Developers" fill sizes="(max-width: 768px) 100vw, 16vw" className="object-cover" />
               </div>
               <div className="flex-1 pt-2">
                 <h3 className="text-3xl font-serif mb-2 text-black">Leon Caldwell, Ph.D.</h3>
@@ -326,7 +334,7 @@ const UjimaWebsite = () => {
             </FadeIn>
             <FadeIn delay={200} className="flex flex-col md:flex-row gap-8 md:gap-12 items-start group">
               <div className="w-full md:w-1/3 aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-700 overflow-hidden">
-                <img src="/images/akeema-edwards.jpg" alt="Akeema Edwards" className="w-full h-full object-cover" />
+                <Image src="/images/akeema-edwards.jpg" alt="Akeema Edwards — Founder of XE Aesthetic" fill sizes="(max-width: 768px) 100vw, 16vw" className="object-cover" />
               </div>
               <div className="flex-1 pt-2">
                 <h3 className="text-3xl font-serif mb-2 text-black">Akeema Edwards</h3>
@@ -353,33 +361,33 @@ const UjimaWebsite = () => {
                 </h2>
               </FadeIn>
               <div className="flex flex-col sm:flex-row gap-6">
-                <button className="px-10 py-5 bg-black text-white text-sm tracking-widest uppercase hover:bg-purple-600 transition-colors duration-300 font-bold cursor-pointer">
+                <a href="mailto:info@ujimastx.com?subject=New%20Project%20Inquiry" className="px-10 py-5 bg-black text-white text-sm tracking-widest uppercase hover:bg-purple-600 transition-colors duration-300 font-bold cursor-pointer inline-block text-center">
                   Start a Project
-                </button>
-                <button className="px-10 py-5 border border-black/20 text-black text-sm tracking-widest uppercase hover:border-purple-500 hover:text-purple-600 transition-colors duration-300 cursor-pointer">
+                </a>
+                <a href="mailto:info@ujimastx.com?subject=Investor%20Relations" className="px-10 py-5 border border-black/20 text-black text-sm tracking-widest uppercase hover:border-purple-500 hover:text-purple-600 transition-colors duration-300 cursor-pointer inline-block text-center">
                   Investor Relations
-                </button>
+                </a>
               </div>
             </div>
             <div className="lg:col-span-4 flex flex-col justify-end">
               <div className="space-y-6 text-right">
-                <div className="flex items-center justify-end gap-3 text-gray-500 hover:text-black transition-colors cursor-pointer">
+                <a href="mailto:info@ujimastx.com" className="flex items-center justify-end gap-3 text-gray-500 hover:text-black transition-colors cursor-pointer">
                   <span className="text-sm tracking-widest uppercase">info@ujimastx.com</span>
                   <Mail size={16} />
-                </div>
+                </a>
                 <div className="flex items-center justify-end gap-3 text-gray-500 hover:text-black transition-colors cursor-pointer">
                   <span className="text-sm tracking-widest uppercase">St. Croix, USVI</span>
                   <MapPin size={16} />
                 </div>
-                <div className="flex items-center justify-end gap-3 text-gray-500 hover:text-black transition-colors cursor-pointer">
+                <a href="https://www.linkedin.com/company/ujima-stx" target="_blank" rel="noopener noreferrer" className="flex items-center justify-end gap-3 text-gray-500 hover:text-black transition-colors cursor-pointer">
                   <span className="text-sm tracking-widest uppercase">LinkedIn</span>
                   <Linkedin size={16} />
-                </div>
+                </a>
               </div>
             </div>
           </div>
           <div className="border-t border-black/5 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 uppercase tracking-widest">
-            <p>&copy; 2025 Ujima STX</p>
+            <p>&copy; {new Date().getFullYear()} Ujima STX</p>
             <div className="flex gap-8 mt-4 md:mt-0">
               <a href="#" className="hover:text-black transition-colors">
                 Privacy
