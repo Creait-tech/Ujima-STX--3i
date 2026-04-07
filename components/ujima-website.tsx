@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
+import Link from "next/link"
 import { Menu, X, ArrowRight, ChevronDown, ArrowUpRight, Mail, MapPin, Linkedin } from "lucide-react"
 import { CustomCursor } from "@/components/ui/custom-cursor"
 import { FadeIn } from "@/components/ui/fade-in"
@@ -207,6 +208,7 @@ const UjimaWebsite = () => {
             {[
               {
                 title: "Vitality Senior Living",
+                slug: "vitality-senior-living",
                 type: "Wellness Campus • St. Croix, USVI",
                 desc: "264-unit integrated senior living community addressing a critical 264-unit supply gap. Features 180 independent living, 70 assisted living, and 14 memory care units with on-site healthcare partnerships.",
                 imgUrl: "/projects/vitality-11-0.png",
@@ -214,6 +216,7 @@ const UjimaWebsite = () => {
               },
               {
                 title: "Thrive Village",
+                slug: "thrive-village",
                 type: "Mixed-Use Cultural Hub • Philadelphia, PA",
                 desc: "A community-forward development at W Girard Ave featuring the Food as Medicine Park, shipping container markets, commercial space, and residential units anchored by cultural programming.",
                 imgUrl: "/projects/thrive-fam-2-0.png",
@@ -221,6 +224,7 @@ const UjimaWebsite = () => {
               },
               {
                 title: "Workforce Housing",
+                slug: "workforce-housing",
                 type: "Essential Worker Housing • St. Croix, USVI",
                 desc: "Climate-resilient workforce housing adjacent to Gov. Juan F. Luis Hospital. Phase one delivers 50 units with rooftop solar, stormwater infrastructure, and a connector road linking healthcare to community.",
                 imgUrl: "/projects/bird-view.png",
@@ -228,6 +232,7 @@ const UjimaWebsite = () => {
               },
               {
                 title: "Age-Friendly Village",
+                slug: "age-friendly-village",
                 type: "Accessible Housing • Philadelphia, PA",
                 desc: "Three-story accessible housing development on Leidy Ave designed with WRT for aging-in-place. Features picnic groves, accessible ramps, community gardens, and porch-front living.",
                 imgUrl: "/projects/age-friendly-3-0.png",
@@ -235,7 +240,7 @@ const UjimaWebsite = () => {
               },
             ].map((project, i) => (
               <FadeIn key={i} delay={i % 2 === 0 ? 0 : 200}>
-                <div className="group cursor-pointer">
+                <Link href={`/projects/${project.slug}`} className="group cursor-pointer block">
                   <div className="relative aspect-[4/3] overflow-hidden mb-8 bg-gray-100">
                     <Image
                       src={project.imgUrl}
@@ -261,7 +266,7 @@ const UjimaWebsite = () => {
                     <p className="text-purple-600 text-xs tracking-widest uppercase mb-3">{project.type}</p>
                     <p className="text-gray-500 text-sm leading-relaxed font-light">{project.desc}</p>
                   </div>
-                </div>
+                </Link>
               </FadeIn>
             ))}
           </div>
