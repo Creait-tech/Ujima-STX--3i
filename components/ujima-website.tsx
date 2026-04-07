@@ -71,7 +71,7 @@ const UjimaWebsite = () => {
       {/* Hero Section */}
       <header id="vision" className="relative min-h-screen flex items-center justify-center px-6 overflow-hidden">
         <div className="absolute inset-0 z-0">
-          <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?q=80&w=2670&auto=format&fit=crop')] bg-cover bg-center grayscale opacity-20 mix-blend-multiply animate-ken-burns transform scale-105 transition-transform duration-[20s]"></div>
+          <div className="absolute inset-0 bg-[url('/projects/bird-view.png')] bg-cover bg-center grayscale opacity-20 mix-blend-multiply animate-ken-burns transform scale-105 transition-transform duration-[20s]"></div>
           <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/20 to-white"></div>
         </div>
 
@@ -106,7 +106,7 @@ const UjimaWebsite = () => {
       <section className="py-12 border-y border-black/5 bg-gray-50">
         <div className="max-w-[1400px] mx-auto px-6 grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
           {[
-            { number: 250, suffix: "+", label: "Planned Units" },
+            { number: 564, suffix: "+", label: "Planned Units" },
             { number: 20, suffix: "+", label: "Years Experience" },
             { number: 4, suffix: "", label: "Signature Projects" },
             { number: 100, suffix: "%", label: "Mission Aligned" },
@@ -128,8 +128,8 @@ const UjimaWebsite = () => {
           <div className="relative min-h-[60vh] lg:min-h-screen overflow-hidden group">
             <div className="absolute inset-0 bg-gray-100 transition-transform duration-[2s] ease-out scale-110 group-hover:scale-100">
               <img
-                src="https://images.unsplash.com/photo-1600607686527-6fb886090705?q=80&w=2700&auto=format&fit=crop"
-                alt="Architecture"
+                src="/projects/vitality-11-0.png"
+                alt="Vitality Senior Living Campus Render"
                 className="w-full h-full object-cover opacity-80 grayscale hover:grayscale-0 transition-all duration-1000"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-white via-white/50 to-transparent"></div>
@@ -201,47 +201,57 @@ const UjimaWebsite = () => {
             {[
               {
                 title: "Vitality Senior Living",
-                type: "Wellness Campus",
-                imgUrl: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?q=80&w=2070&auto=format&fit=crop",
+                type: "Wellness Campus • St. Croix, USVI",
+                desc: "264-unit integrated senior living community addressing a critical 264-unit supply gap. Features 180 independent living, 70 assisted living, and 14 memory care units with on-site healthcare partnerships.",
+                imgUrl: "/projects/vitality-11-0.png",
+                stats: "264 Units • 8 Acres • Healthcare Integration",
               },
               {
                 title: "Thrive Village",
-                type: "Cultural Development",
-                imgUrl: "https://images.unsplash.com/photo-1518780664697-55e3ad937233?q=80&w=2070&auto=format&fit=crop",
+                type: "Mixed-Use Cultural Hub • Philadelphia, PA",
+                desc: "A community-forward development at W Girard Ave featuring the Food as Medicine Park, shipping container markets, commercial space, and residential units anchored by cultural programming.",
+                imgUrl: "/projects/thrive-fam-2-0.png",
+                stats: "Mixed-Use • Food as Medicine Park • Commercial + Residential",
               },
               {
-                title: "STEAMIE Hub",
-                type: "Innovation Node",
-                imgUrl: "https://images.unsplash.com/photo-1506097425191-7ad538b29cef?q=80&w=2070&auto=format&fit=crop",
+                title: "Workforce Housing",
+                type: "Essential Worker Housing • St. Croix, USVI",
+                desc: "Climate-resilient workforce housing adjacent to Gov. Juan F. Luis Hospital. Phase one delivers 50 units with rooftop solar, stormwater infrastructure, and a connector road linking healthcare to community.",
+                imgUrl: "/projects/bird-view.png",
+                stats: "250 Units • 5 Acres • Solar Micro-Grid",
               },
               {
                 title: "Age-Friendly Village",
-                type: "Accessible Housing",
-                imgUrl: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?q=80&w=2053&auto=format&fit=crop",
+                type: "Accessible Housing • Philadelphia, PA",
+                desc: "Three-story accessible housing development on Leidy Ave designed with WRT for aging-in-place. Features picnic groves, accessible ramps, community gardens, and porch-front living.",
+                imgUrl: "/projects/age-friendly-page-3.png",
+                stats: "Accessible • Aging-in-Place • Community Landscape",
               },
             ].map((project, i) => (
               <FadeIn key={i} delay={i % 2 === 0 ? 0 : 200}>
                 <div className="group cursor-pointer">
                   <div className="relative aspect-[4/3] overflow-hidden mb-8 bg-gray-100">
                     <img
-                      src={project.imgUrl || "/placeholder.svg"}
+                      src={project.imgUrl}
                       alt={project.title}
                       className="absolute inset-0 w-full h-full object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition-all duration-[1.5s] ease-[cubic-bezier(0.25,1,0.5,1)] opacity-80 group-hover:opacity-100"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-white via-transparent to-transparent opacity-50"></div>
-                    <div className="absolute bottom-6 left-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest">
+                    <div className="absolute bottom-6 left-6 right-6">
+                      <p className="text-xs text-gray-600 tracking-widest uppercase opacity-0 group-hover:opacity-100 transition-opacity duration-500 mb-2">
+                        {project.stats}
+                      </p>
+                      <span className="inline-flex items-center gap-2 px-4 py-2 bg-black text-white text-xs font-bold uppercase tracking-widest opacity-0 group-hover:opacity-100 transition-opacity duration-500">
                         View Project <ArrowUpRight size={12} />
                       </span>
                     </div>
                   </div>
-                  <div className="flex justify-between items-start border-t border-black/10 pt-6">
-                    <div>
-                      <h3 className="text-2xl font-serif mb-2 text-black group-hover:text-purple-600 transition-colors duration-500">
-                        {project.title}
-                      </h3>
-                      <p className="text-gray-500 text-sm tracking-widest uppercase">{project.type}</p>
-                    </div>
+                  <div className="border-t border-black/10 pt-6">
+                    <h3 className="text-2xl font-serif mb-2 text-black group-hover:text-purple-600 transition-colors duration-500">
+                      {project.title}
+                    </h3>
+                    <p className="text-purple-600 text-xs tracking-widest uppercase mb-3">{project.type}</p>
+                    <p className="text-gray-500 text-sm leading-relaxed font-light">{project.desc}</p>
                   </div>
                 </div>
               </FadeIn>
@@ -316,7 +326,7 @@ const UjimaWebsite = () => {
             </FadeIn>
             <FadeIn delay={200} className="flex flex-col md:flex-row gap-8 md:gap-12 items-start group">
               <div className="w-full md:w-1/3 aspect-[3/4] bg-gray-200 relative grayscale group-hover:grayscale-0 transition-all duration-700 overflow-hidden">
-                <img src="/images/akeema-edwards.avif" alt="Akeema Edwards" className="w-full h-full object-cover" />
+                <img src="/images/akeema-edwards.jpg" alt="Akeema Edwards" className="w-full h-full object-cover" />
               </div>
               <div className="flex-1 pt-2">
                 <h3 className="text-3xl font-serif mb-2 text-black">Akeema Edwards</h3>
